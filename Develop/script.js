@@ -13,7 +13,16 @@ function writePassword() {
  }
 console.log(length); 
 
-var lower = window.prompt("do you want lowercase letters? Yes or No"); 
+
+
+      var passwordText = document.querySelector("#password"); 
+      passwordText.value = generatePassword(length);
+    
+
+  
+  function generatePassword(length) { 
+  
+    var lower = window.prompt("do you want lowercase letters? Yes or No"); 
      lower = lower.toLowerCase(); 
      console.log(lower); 
  // if (lower != "yes" || lower != "no") { 
@@ -33,15 +42,8 @@ var lower = window.prompt("do you want lowercase letters? Yes or No");
 
      var special = window.prompt("do you want special characters? Yes or No"); 
      special = special.toLowerCase(); 
-     console.log(special); 
+     console.log(special);  
 
-      var passwordText = document.querySelector("#password"); 
-      passwordText.value = generatePassword(length);
-    
-
-  
-  function generatePassword(length) { 
-  
     console.log(length); 
     var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@!#$%^&*()+";
     var password = "";
