@@ -6,7 +6,7 @@ function writePassword() {
   
   var length = window.prompt("how long do you want your password to be? you can pick between 4 and 26 characters"); 
   
-  if (length <= 3 || length >= 27) { 
+  if ((!(length >= 4)) || (!(length <= 26))) { 
 
  window.alert("You need to provide a valid answer! Please try again.");    
    writePassword();  
@@ -22,34 +22,84 @@ console.log(length);
   
   function generatePassword(length) { 
   
+    // variables and prompts
     var lower = window.prompt("do you want lowercase letters? Yes or No"); 
      lower = lower.toLowerCase(); 
      console.log(lower); 
- // if (lower != "yes" || lower != "no") { 
- 
- //window.alert("You need to provide a valid answer! Please try again.");    
- //  writePassword();  
- //}
-  console.log(lower);  
+
+  if (!(lower === "yes" || lower === "no")) { 
+ window.alert("You need to provide a valid answer Vidur!. duuhuhuu");    
+   writePassword();  
+ }
 
   var upper = window.prompt("do you want uppercase letters? Yes or No"); 
      upper = upper.toLowerCase(); 
      console.log(upper);  
 
+     
+  if (!(upper === "yes" || upper === "no")) { 
+    window.alert("Your ability to read is like watching retards hump a doornob");    
+      writePassword();  
+    }
+
      var number = window.prompt("do you want numbers? Yes or No"); 
      number = number.toLowerCase(); 
-     console.log(number);  
+     console.log(number);   
+
+     if (!(number === "yes" || number === "no")) { 
+      window.alert("Please don't reproduce");    
+        writePassword();  
+      }
 
      var special = window.prompt("do you want special characters? Yes or No"); 
      special = special.toLowerCase(); 
      console.log(special);  
 
+     if (!(special === "yes" || special === "no")) { 
+      window.alert("you need to breath in and breath out, yes I know its very hard");    
+        writePassword();  
+      }
+
     console.log(length); 
     var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@!#$%^&*()+";
     var password = "";
-    for (var i = 0, n = charset.length; i < length; ++i) {
-        password += charset.charAt(Math.floor(Math.random() * n));
-    } 
+
+// conditions are set up 
+if ( lower === "yes" && upper === "no") { 
+  charset = charset.toLowerCase();
+} 
+
+if ( lower === "no" && upper === "yes") { 
+  charset = charset.toUpperCase();
+}  
+
+if ( lower === "no" && upper === "no") { 
+ // charset = "0123456789@!#$%^&*()+"; 
+  charset = charset.replace(/\D/g,''); 
+  console.log(charset); 
+} 
+
+if ( number === "no") { 
+  charset = charset.replace(/\d/g,''); 
+  console.log(charset);  
+  //if statement must have numbers or alaphabet
+} 
+
+if ( special === "no") { 
+  charset = charset.replace(/[@!#$%^&*()+]/g,''); 
+  console.log(charset); 
+}  
+
+if (special === "no" && number === "no" && lower === "no" && upper === "no") { 
+window.alert("If you dont provide a valid answer my foot will go up your ass");    
+writePassword(); 
+};
+
+  console.log(password); 
+
+  for (var i = 0, n = charset.length; i < length; ++i) {
+      password += charset.charAt(Math.floor(Math.random() * n));
+      } 
     console.log(password);
     return password; 
   } 
