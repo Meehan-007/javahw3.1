@@ -11,9 +11,30 @@ function writePassword() {
  window.alert("You need to provide a valid answer! Please try again.");    
    writePassword();  
  }
-console.log(length);
+console.log(length); 
 
-    // passwordinfo.charalength(); 
+var lower = window.prompt("do you want lowercase letters? Yes or No"); 
+     lower = lower.toLowerCase(); 
+     console.log(lower); 
+ // if (lower != "yes" || lower != "no") { 
+ 
+ //window.alert("You need to provide a valid answer! Please try again.");    
+ //  writePassword();  
+ //}
+  console.log(lower);  
+
+  var upper = window.prompt("do you want uppercase letters? Yes or No"); 
+     upper = upper.toLowerCase(); 
+     console.log(upper);  
+
+     var number = window.prompt("do you want numbers? Yes or No"); 
+     number = number.toLowerCase(); 
+     console.log(number);  
+
+     var special = window.prompt("do you want special characters? Yes or No"); 
+     special = special.toLowerCase(); 
+     console.log(special); 
+
       var passwordText = document.querySelector("#password"); 
       passwordText.value = generatePassword(length);
     
