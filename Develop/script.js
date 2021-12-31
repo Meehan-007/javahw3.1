@@ -62,7 +62,7 @@ console.log(length);
 
     console.log(length); 
     var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@!#$%^&*()+";
-    var password = "";
+    
 
 // conditions are set up 
 if ( lower === "yes" && upper === "no") { 
@@ -74,8 +74,8 @@ if ( lower === "no" && upper === "yes") {
 }  
 
 if ( lower === "no" && upper === "no") { 
- // charset = "0123456789@!#$%^&*()+"; 
-  charset = charset.replace(/\D/g,''); 
+  charset = "0123456789@!#$%^&*()+"; 
+ // charset = charset.replace(/\D/g,''); 
   console.log(charset); 
 } 
 
@@ -95,6 +95,7 @@ window.alert("If you dont provide a valid answer my foot will go up your ass");
 writePassword(); 
 };
 
+  var password = "";
   console.log(password); 
 
   for (var i = 0, n = charset.length; i < length; ++i) {
